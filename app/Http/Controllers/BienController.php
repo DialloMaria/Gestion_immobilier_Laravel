@@ -29,13 +29,14 @@ class BienController extends Controller
         $bien->save();
         return redirect()->back();
     }
-
-    public function supprimer_des_biens($id){
-        $bien=Bien::find($id);
-        $bien->delete();
-        return redirect()->back()->with('error', 'Erreur lors de la suppression du bien.');
+    
+    public function details($id)
+    {
+        $biens = Bien::findOrFail($id);
+        return view('biens.details', compact('biens'));
     }
 
+<<<<<<< HEAD
     public function modification_des_biens($id){
         $bien=Bien::find($id);
         return view('/biens.updateBien', compact('bien'));
@@ -53,4 +54,6 @@ class BienController extends Controller
         $bien->update();
         return view('/biens.bien');
     }
+=======
+>>>>>>> ebbd3ced702d86d060698bfa74875898b558b6c2
 }
