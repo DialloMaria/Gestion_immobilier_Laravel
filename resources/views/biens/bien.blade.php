@@ -23,7 +23,7 @@
                 <strong>Statut :</strong> {{$bien->statut}}<br>
                 <strong>Date :</strong> {{$bien->created_at}}
               </p>
-              <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">Voir plus</a>
+              <a href="#" class="btn btn-primary">Voir plus</a>
             </div>
           </div>
           @endforeach

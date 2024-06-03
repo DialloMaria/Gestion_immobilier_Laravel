@@ -13,6 +13,8 @@ Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
 
 Route::post('Accueil/ajout/traitement',[BienController::class , 'Traitement_des_biens']);
 
+Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->name('biens.supprimer');
+
 
 
 

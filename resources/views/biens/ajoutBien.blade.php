@@ -44,7 +44,7 @@
               <option value="">Sélectionner une catégorie</option>
               <option value="duplex">Duplex</option>
               <option value="appartement">Appartement</option>
-              <option value="champ">Champ</option>
+              <option value="champ">Chambre</option>
             </select>
           </div>
         </div>

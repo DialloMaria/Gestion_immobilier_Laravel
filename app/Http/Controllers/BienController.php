@@ -29,11 +29,4 @@ class BienController extends Controller
         $bien->save();
         return redirect()->back();
     }
-
-    public function details($id)
-    {
-        $biens = Bien::findOrFail($id);
-        return view('biens.details', compact('biens'));
-    }
 }
-    
