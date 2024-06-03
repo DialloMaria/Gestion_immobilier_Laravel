@@ -11,4 +11,23 @@ class BienController extends Controller
         $biens= Bien::all();
         return view('/biens/bien', compact('biens'));
     }
+
+    public function Ajouter_des_biens(){
+        return view('/biens/ajoutBien');
+    }
+
+    public function Traitement_des_biens(Request $request){
+        $bien = new Bien ();
+        // dd($request->all());
+        $bien->nom = $request->nom ;
+        $bien->categorie = $request->categorie ;
+        $bien->image = $request->image ;
+        $bien->description= $request->description;
+        $bien->adresse= $request->adresse;
+        $bien->statut= $request->statut;
+
+        $bien->save();
+        return redirect()->back();
+    }
 }
+    
