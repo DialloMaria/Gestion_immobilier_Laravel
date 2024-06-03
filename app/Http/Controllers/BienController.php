@@ -29,5 +29,10 @@ class BienController extends Controller
         $bien->save();
         return redirect()->back();
     }
+
+    public function supprimer_des_biens($id){
+        $bien=Bien::find($id);
+        $bien->delete();
+        return redirect()->back()->with('error', 'Erreur lors de la suppression du bien.');
+    }
 }
-    

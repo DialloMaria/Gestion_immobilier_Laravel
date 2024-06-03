@@ -23,8 +23,22 @@
                 <strong>Statut :</strong> {{$bien->statut}}<br>
                 <strong>Date :</strong> {{$bien->created_at}}
               </p>
-              <a href="#" class="btn btn-primary">Voir plus</a>
-            </div>
+              <a href="#" class="btn btn-primary" >Voir plus</a>
+              {{-- <a href="/delete/{{$bien->id}}" class="btn btn-primary">Supprimer</a> --}}
+              {{-- <a href="#" class="btn btn-primary">Voir plus</a>
+            </div> --}}
+            {{-- <form method="POST" action="/delete/{{$bien->id}}">
+                @csrf
+                @method('DELETE')
+                <Button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</Button>
+            </form> --}}
+
+            <form action="{{ route('biens.supprimer', $bien->id) }}" method="POST">
+                @csrf
+                @method('DELETE')
+                <button type="submit" class="btn btn-danger">Supprimer</button>
+              </form>
+            {{-- <a href="/delete/{{$bien->id}}"><button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button></a> --}}
           </div>
           @endforeach
         </div>
