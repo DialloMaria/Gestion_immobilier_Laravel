@@ -8,4 +8,8 @@ use Illuminate\Database\Eloquent\Model;
 class Commentaire extends Model
 {
     use HasFactory;
+
+    public function bien(){
+        return $this->belongsTo(Bien::class);
+    }
 }
