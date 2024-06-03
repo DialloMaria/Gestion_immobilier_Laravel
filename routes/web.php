@@ -2,6 +2,8 @@
 
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BienController;
+use App\Http\Controllers\CommentaireController;
+
 
 Route::get('/', function () {
     return view('welcome');
@@ -20,3 +22,6 @@ Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->na
 
 //C'est la route qui permet d'afficher les commentaire d'un bien
 Route::get('/biens/details/{id}', [BienController::class, 'details'])->name('biens.details');
+
+//Cette route c'est pour l'ajout d'un commentaire pour un bien
+Route::post('biens/details/commentaires/store', [CommentaireController::class, 'store'])->name('biens.commentaires.store');

@@ -56,6 +56,7 @@
             @foreach($biens->commentaires as $commentaire)
                 <div class="comment card">
                     <div class="card-body">
+                        <p><strong>{{ $commentaire->auteur }}</strong></p>
                         <p>{{ $commentaire->contenu }}</p>
                         @if($commentaire->created_at)
                             <small>Posté le {{ $commentaire->created_at->format('d/m/Y') }}</small>
@@ -63,20 +64,38 @@
                             <small>Date de publication inconnue</small>
                         @endif
                         <hr>
-                        <div class="d-flex gap-2">
-                            {{-- <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a> --}}
+                        {{-- <div class="d-flex gap-2">
+                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
                             
-                            {{-- <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
+                            <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
-                            </form> --}}
+                            </form>
                             
-                        </div>
+                        </div> --}}
                     </div>
                 </div>
             @endforeach
         @endif
     </div>
+    
+    <div class="comment-form">
+        <form action="commentaires/store" method="POST">
+            @csrf
+            <input type="hidden" name="bien_id" value="{{ $biens->id }}">
+            <div class="form-group">
+                <label for="auteur">Nom</label>
+                <input type="text" class="form-control" id="auteur" name="auteur">
+            </div>
+            <div class="mb-3">
+                <label for="contenu" class="form-label">Contenu du commentaire</label>
+                <textarea class="form-control" id="contenu" name="contenu" required></textarea>
+            </div>
+            <button type="submit" class="btn btn-primary">Ajouter Commentaire</button>
+        </form>
+    </div>
+    
+
 </body>
 </html>
