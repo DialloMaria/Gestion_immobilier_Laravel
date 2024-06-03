@@ -11,7 +11,7 @@
       <h1 class="mb-4">Biens Immobiliers</h1>
       <div class="row">
         <div class="col-md-4 mb-4">
-            @foreach ($biens as $bien )
+            @foreach ($biens as $bien)
           <div class="card">
             <img src="{{$bien->image}}" class="card-img-top" alt="Image du bien">
             <div class="card-body">
@@ -37,9 +37,10 @@
                 @csrf
                 @method('DELETE')
                 <button type="submit" class="btn btn-danger">Supprimer</button>
-              </form>
+            </form>
             {{-- <a href="/delete/{{$bien->id}}"><button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button></a> --}}
           </div>
+             <a href="/update/{{$bien->id}}"><button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button></a>
           @endforeach
         </div>
   

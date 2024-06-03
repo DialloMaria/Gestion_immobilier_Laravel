@@ -31,16 +31,18 @@
   <body>
     <div class="container mt-5">
       <h2 class="mb-4">Ajouter un Bien Immobilier</h2>
-      <form action="/ajout/traitement" method="POST" >
+      <form action="/update/traitement" method="POST" >
         @csrf
+        <input type="hidden" name="id" value="{{$bien->id}}">
+
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="nom" class="form-label">Nom</label>
-            <input type="text" class="form-control" id="nom" name="nom" >
+            <input type="text" class="form-control" id="nom" name="nom" value="{{$bien->nom}}" >
           </div>
           <div class="col-md-6">
             <label for="categorie" class="form-label">Catégorie</label>
-            <select class="form-control" id="categorie" name="categorie" >
+            <select class="form-control" id="categorie" name="categorie" value="{{$bien->categorie}}" >
               <option value="">Sélectionner une catégorie</option>
               <option value="duplex">Duplex</option>
               <option value="appartement">Appartement</option>
@@ -51,17 +53,17 @@
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="image" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image" name="image" >
+            <input type="file" class="form-control" id="image" name="image" value="{{$bien->image}}"  >
           </div>
           <div class="col-md-6">
             <label for="adresse" class="form-label">Adresse</label>
-            <input type="text" class="form-control" id="adresse" name="adresse" >
+            <input type="text" class="form-control" id="adresse" name="adresse" value="{{$bien->adresse}}"  >
           </div>
         </div>
         <div class="row mb-3">
           <div class="col-md-6">
             <label for="status" class="form-label">Statut</label>
-            <select class="form-control" id="status" name="statut" >
+            <select class="form-control" id="status" name="statut" value="{{$bien->statut}}"  >
               <option value="">Sélectionner un statut</option>
               <option value="1">Disponible</option>
               <option value="0">Indisponible</option>
@@ -69,7 +71,7 @@
           </div>
           <div class="col-md-6">
             <label for="description" class="form-label">Description</label>
-            <textarea class="form-control" id="description" name="description" rows="3" ></textarea>
+            <textarea class="form-control" id="description" name="description" rows="3" >{{$bien->description}}" </textarea>
           </div>
         </div>
         <button type="submit" class="btn btn-primary">Ajouter</button>
