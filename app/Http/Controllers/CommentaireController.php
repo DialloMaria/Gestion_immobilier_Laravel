@@ -22,4 +22,25 @@ class CommentaireController extends Controller
     // Redirection ou autre logique après l'enregistrement
     return back()->with('success', 'Commentaire ajouté avec succès!');
 }
+
+public function edit($id)
+    {
+        $commentaire = Commentaire::findOrFail($id);
+        return view('commentaires.edit', compact('commentaire'));
+    }
+
+    public function update(Request $request, $id)
+    {
+        $validated = $request->validate([
+            'contenu' => 'required|string',
+        ]);
+
+        $commentaire = Commentaire::findOrFail($id);
+        $commentaire->update([
+            'contenu' => $validated['contenu'],
+        ]);
+
+        return redirect()->route('biens.details', $commentaire->bien_id)->with('success', 'Commentaire mis à jour avec succès!');
+    }
+
 }

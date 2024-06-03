@@ -25,3 +25,6 @@ Route::get('/biens/details/{id}', [BienController::class, 'details'])->name('bie
 
 //Cette route c'est pour l'ajout d'un commentaire pour un bien
 Route::post('biens/details/commentaires/store', [CommentaireController::class, 'store'])->name('biens.commentaires.store');
+
+Route::get('/commentaires/{id}/edit', [CommentaireController::class, 'edit'])->name('commentaires.edit');
+Route::put('/commentaires/{id}', [CommentaireController::class, 'update'])->name('commentaires.update');
