@@ -3,13 +3,14 @@
 use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BienController;
 use App\Http\Controllers\CommentaireController;
+use App\Http\Controllers\AuthController;
 
 
 // Route::get('/', function () {
 //     return ('/biens.index');
 // });
 
-Route::get('Accueil', [BienController::class ,'Affichage_des_biens']);
+Route::get('Accueil', [BienController::class ,'Affichage_des_biens'])->name('Accueil');
 
 Route::get('/   ', [BienController::class ,'vue_utilisateurs']);
 
@@ -37,3 +38,7 @@ Route::put('/commentaires/{id}', [CommentaireController::class, 'update'])->name
 
 // Définition de la route pour la suppression de commentaire
 Route::delete('/commentaires/{id}', [CommentaireController::class, 'destroy'])->name('commentaires.destroy');
+
+Route::get('/login', [AuthController::class, 'login'])->name('auth.login'); 
+
+Route::post('/login', [AuthController::class, 'dologin']); 
