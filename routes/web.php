@@ -17,11 +17,10 @@ Route::post('Accueil/ajout/traitement',[BienController::class , 'Traitement_des_
 
 Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->name('biens.supprimer');
 
-<<<<<<< HEAD
+
 Route::get('/update/{id}', [BienController::class, 'modification_des_biens']);
 
 Route::post('/update/traitement', [BienController::class, 'Traitement_pour_modifier_des_biens']);
-=======
 
 
 
@@ -36,4 +35,3 @@ Route::put('/commentaires/{id}', [CommentaireController::class, 'update'])->name
 
 // Définition de la route pour la suppression de commentaire
 Route::delete('/commentaires/{id}', [CommentaireController::class, 'destroy'])->name('commentaires.destroy');
->>>>>>> ebbd3ced702d86d060698bfa74875898b558b6c2

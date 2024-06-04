@@ -36,7 +36,7 @@ class BienController extends Controller
         return view('biens.details', compact('biens'));
     }
 
-<<<<<<< HEAD
+
     public function modification_des_biens($id){
         $bien=Bien::find($id);
         return view('/biens.updateBien', compact('bien'));
@@ -54,6 +54,5 @@ class BienController extends Controller
         $bien->update();
         return view('/biens.bien');
     }
-=======
->>>>>>> ebbd3ced702d86d060698bfa74875898b558b6c2
+
 }

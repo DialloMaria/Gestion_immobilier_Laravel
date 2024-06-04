@@ -23,7 +23,6 @@
                 <strong>Statut :</strong> {{$bien->statut}}<br>
                 <strong>Date :</strong> {{$bien->created_at}}
               </p>
-<<<<<<< HEAD
               <a href="#" class="btn btn-primary" >Voir plus</a>
               {{-- <a href="/delete/{{$bien->id}}" class="btn btn-primary">Supprimer</a> --}}
               {{-- <a href="#" class="btn btn-primary">Voir plus</a>
@@ -40,10 +39,10 @@
                 <button type="submit" class="btn btn-danger">Supprimer</button>
             </form>
             {{-- <a href="/delete/{{$bien->id}}"><button type="button" class="btn btn-sm btn-outline-secondary">Supprimer</button></a> --}}
-=======
+
               <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">Voir plus</a>
             </div>
->>>>>>> ebbd3ced702d86d060698bfa74875898b558b6c2
+
           </div>
              <a href="/update/{{$bien->id}}"><button type="button" class="btn btn-sm btn-outline-secondary">Modifier</button></a>
           @endforeach
