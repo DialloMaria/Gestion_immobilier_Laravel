@@ -43,4 +43,12 @@ public function edit($id)
         return redirect()->route('biens.details', $commentaire->bien_id)->with('success', 'Commentaire mis à jour avec succès!');
     }
 
+    public function destroy($id)
+    {
+        $commentaire = Commentaire::findOrFail($id);
+        $commentaire->delete();
+
+        return redirect()->route('biens.details', $commentaire->bien_id)->with('success', 'Commentaire supprimé avec succès!');
+    }
+
 }

@@ -67,11 +67,11 @@
                         <div class="d-flex gap-2">
                             <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
                             
-                            {{-- <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
+                            <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
                                 @csrf
                                 @method('DELETE')
                                 <button type="submit" class="btn btn-danger">Supprimer</button>
-                            </form> --}}
+                            </form>
                             
                         </div>
                     </div>

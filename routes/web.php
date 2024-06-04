@@ -28,3 +28,6 @@ Route::post('biens/details/commentaires/store', [CommentaireController::class, '
 
 Route::get('/commentaires/{id}/edit', [CommentaireController::class, 'edit'])->name('commentaires.edit');
 Route::put('/commentaires/{id}', [CommentaireController::class, 'update'])->name('commentaires.update');
+
+// Définition de la route pour la suppression de commentaire
+Route::delete('/commentaires/{id}', [CommentaireController::class, 'destroy'])->name('commentaires.destroy');
