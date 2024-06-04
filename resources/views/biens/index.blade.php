@@ -85,14 +85,8 @@
                             <strong>Date :</strong> {{$bien->created_at}}
                         </p>
                         <div class="d-flex justify-content-between">
-                            <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">Voir plus</a>
-                            <a href="/update/{{$bien->id}}" class="btn btn-secondary">Modifier</a>
+                            <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">En savoir +</a>
                         </div>
-                        <form action="{{ route('biens.supprimer', $bien->id) }}" method="POST" class="mt-2">
-                            @csrf
-                            @method('DELETE')
-                            <button type="submit" class="btn btn-danger w-100">Supprimer</button>
-                        </form>
                     </div>
                 </div>
             </div>

@@ -49,10 +49,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="image" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image" name="image" >
-          </div>
+            <div class="col-md-6">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" class="form-control" name="image" id="image">
+            </div>
           <div class="col-md-6">
             <label for="adresse" class="form-label">Adresse</label>
             <input type="text" class="form-control" id="adresse" name="adresse" >

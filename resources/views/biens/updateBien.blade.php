@@ -51,10 +51,10 @@
           </div>
         </div>
         <div class="row mb-3">
-          <div class="col-md-6">
-            <label for="image" class="form-label">Image</label>
-            <input type="file" class="form-control" id="image" name="image" value="{{$bien->image}}"  >
-          </div>
+            <div class="col-md-6">
+                <label for="image" class="form-label">Image</label>
+                <input type="text" class="form-control" name="image" id="image"  value="{{$bien->image}}"  >
+            </div>
           <div class="col-md-6">
             <label for="adresse" class="form-label">Adresse</label>
             <input type="text" class="form-control" id="adresse" name="adresse" value="{{$bien->adresse}}"  >
@@ -74,7 +74,7 @@
             <textarea class="form-control" id="description" name="description" rows="3" >{{$bien->description}}" </textarea>
           </div>
         </div>
-        <button type="submit" class="btn btn-primary">Ajouter</button>
+        <button type="submit" class="btn btn-primary">Modifier</button>
       </form>
     </div>
 

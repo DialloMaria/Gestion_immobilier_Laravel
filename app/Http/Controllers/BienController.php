@@ -12,6 +12,12 @@ class BienController extends Controller
         return view('/biens/bien', compact('biens'));
     }
 
+    public function  vue_utilisateurs(){
+        $biens= Bien::all();
+        return view('/biens/index', compact('biens'));
+    }
+   
+
     public function Ajouter_des_biens(){
         return view('/biens/ajoutBien');
     }
@@ -27,9 +33,16 @@ class BienController extends Controller
         $bien->statut= $request->statut;
 
         $bien->save();
-        return redirect()->back();
+        return redirect('/Accueil');
     }
-    
+        public function supprimer_des_biens($id){
+        $bien=Bien::find($id);
+       $bien->delete();
+ 
+        return back();
+    }
+
+
     public function details($id)
     {
         $biens = Bien::findOrFail($id);
@@ -52,7 +65,7 @@ class BienController extends Controller
         $bien->statut= $request->statut;
 
         $bien->update();
-        return view('/biens.bien');
+        return redirect('/Accueil');
     }
 
 }

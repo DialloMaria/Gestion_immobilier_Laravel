@@ -5,15 +5,17 @@ use App\Http\Controllers\BienController;
 use App\Http\Controllers\CommentaireController;
 
 
-Route::get('/', function () {
-    return view('welcome');
-});
+// Route::get('/', function () {
+//     return ('/biens.index');
+// });
 
 Route::get('Accueil', [BienController::class ,'Affichage_des_biens']);
 
+Route::get('/   ', [BienController::class ,'vue_utilisateurs']);
+
 Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
 
-Route::post('Accueil/ajout/traitement',[BienController::class , 'Traitement_des_biens']);
+Route::post('ajout/traitement',[BienController::class , 'Traitement_des_biens']);
 
 Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->name('biens.supprimer');
 
