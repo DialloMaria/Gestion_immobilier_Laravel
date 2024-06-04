@@ -4,10 +4,21 @@ namespace App\Http\Controllers;
 
 use App\Models\Bien;
 use Illuminate\Http\Request;
+use App\Models\User;
+use Illuminate\Support\Facades\Hash;
 
 class BienController extends Controller
 {
     public function Affichage_des_biens(){
+
+        // User::create([
+        //     'name' => 'Mariam',
+        //     'email' => 'mariam@boda.com',
+        //     'password' => Hash::make('0000')
+        // ]); 
+
+
+
         $biens= Bien::all();
         return view('/biens/bien', compact('biens'));
     }
