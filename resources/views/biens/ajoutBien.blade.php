@@ -60,45 +60,73 @@
     
     <div class="container">
         <h2>Ajouter un Bien Immobilier</h2>
+
+        {{-- @if ($errors->any())
+        <div class="alert alert-danger">
+            <ul>
+                @foreach ($errors->all() as $error)
+                <li>{{ $error }}</li>
+                @endforeach
+            </ul>
+        </div>
+        @endif --}}
         <form action="/ajout/traitement" method="POST">
             @csrf
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="nom" class="form-label">Nom</label>
-                    <input type="text" class="form-control" id="nom" name="nom">
+                    <input type="text" class="form-control @error('nom') is-invalid @enderror" id="nom" name="nom">
+                    @error('image')
+                    <div class="text-danger">Saisissez le contenu du champ</div>
+                    @enderror
                 </div>
                 <div class="col-md-6">
                     <label for="categorie" class="form-label">Catégorie</label>
-                    <select class="form-control" id="categorie" name="categorie">
+                    <select class="form-control @error('categorie') is-invalid @enderror" id="categorie" name="categorie">
                         <option value="">Sélectionner une catégorie</option>
                         <option value="duplex">Duplex</option>
                         <option value="appartement">Appartement</option>
                         <option value="chambre">Chambre</option>
                     </select>
+                    @error('categorie')
+                    <div class="text-danger">Choisir une catégorie</div>
+                    @enderror
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="image" class="form-label">Image</label>
-                    <input type="text" class="form-control" name="image" id="image">
+                    <input type="text" class="form-control @error('image') is-invalid @enderror" name="image" id="image">
+                    @error('image')
+                    <div class="text-danger">Inserer une image</div>
+                    @enderror
                 </div>
                 <div class="col-md-6">
                     <label for="adresse" class="form-label">Adresse</label>
-                    <input type="text" class="form-control" id="adresse" name="adresse">
+                    <input type="text" class="form-control @error('adresse') is-invalid @enderror" id="adresse" name="adresse">
+                    @error('adresse')
+                    <div class="text-danger">Saisissez le contenu du champ</div>
+                    @enderror
                 </div>
             </div>
             <div class="row mb-3">
                 <div class="col-md-6">
                     <label for="status" class="form-label">Statut</label>
-                    <select class="form-control" id="status" name="statut">
+                    <select class="form-control @error('statut') is-invalid @enderror" id="status" name="statut">
                         <option value="">Sélectionner un statut</option>
                         <option value="1">Disponible</option>
                         <option value="0">Indisponible</option>
                     </select>
+                    @error('statut')
+                    <div class="text-danger">Selectionner un statut</div>
+                    @enderror
                 </div>
                 <div class="col-md-6">
                     <label for="description" class="form-label">Description</label>
-                    <textarea class="form-control" id="description" name="description" rows="3"></textarea>
+                    <textarea class="form-control @error('description') is-invalid @enderror" id="description" name="description" rows="3"></textarea>
+                    @error('description')
+                    <div class="text-danger">Saisissez le contenu du champ</div>
+                    @enderror
                 </div>
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>

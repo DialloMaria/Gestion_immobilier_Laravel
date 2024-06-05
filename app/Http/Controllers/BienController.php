@@ -35,6 +35,14 @@ class BienController extends Controller
     }
 
     public function Traitement_des_biens(Request $request){
+        $request->validate([
+            'nom' => 'required',
+            'categorie' => 'required',
+            'image' => 'required',
+            'description' => 'required',
+            'adresse' => 'required',
+            'statut' => 'required',
+        ]);
         $bien = new Bien ();
         // dd($request->all());
         $bien->nom = $request->nom ;

@@ -128,11 +128,17 @@
                             <input type="hidden" name="bien_id" value="{{ $biens->id }}">
                             <div class="form-group">
                                 <label for="auteur">Nom</label>
-                                <input type="text" class="form-control" id="auteur" name="auteur">
+                                <input type="text" class="form-control  @error('auteur') is-invalid @enderror" id="auteur" name="auteur">
+                                @error('auteur')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <div class="mb-3">
                                 <label for="contenu" class="form-label">Contenu du commentaire</label>
-                                <textarea class="form-control" id="contenu" name="contenu" required></textarea>
+                                <textarea class="form-control   @error('contenu') is-invalid @enderror"  id="contenu" name="contenu" required></textarea>
+                                @error('contenu')
+                                <div class="text-danger">{{ $message }}</div>
+                                @enderror
                             </div>
                             <button type="submit" class="btn btn-primary">Ajouter Commentaire</button>
                         </form>

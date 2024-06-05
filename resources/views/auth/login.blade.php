@@ -75,15 +75,15 @@
                 <label for="email">Email</label>
                 <input type="email" class="form-control" id="email" name="email" value="{{ old('email') }}">
                 @error('email')
-                    <div class="text-danger mt-1">{{ $message }}</div>
+                    <div class="text-danger mt-1">Donner votre email</div>
                 @enderror
             </div>
             <br>
             <div class="form-group mb-3">
                 <label for="password">Mot de passe</label>
-                <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
                 @error('password')
-                    <div class="text-danger mt-1">{{ $message }}</div>
+                    <div class="text-danger">Donner votre mot de passe</div>
                 @enderror
             </div>
             <hr>
