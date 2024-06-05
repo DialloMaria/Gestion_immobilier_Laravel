@@ -65,6 +65,20 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
+        <br>
+        <br>
+    <div class="container"  >
+        <h1>A propos de nous</h1>
+        <div class="d-flex"></div>
+        <div><img src="" alt=""></div>
+        <div>
+            <p>
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
+                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
+            </p>
+        </div>
+    </div>
 
     <div class="container mt-5">
         <h1 class="mb-4">Nos Biens Immobiliers</h1>
