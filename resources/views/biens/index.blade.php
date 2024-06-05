@@ -36,7 +36,7 @@
             
     
             <div class="navbar-nav ml-auto">
-               <a href="Accueil/ajout"><button class="btn btn-primary" type="button">Ajouter</button></a> 
+               <a href="login"><button class="btn btn-primary" type="button">se connecter</button></a> 
             </div>
         </div>
     </nav>
@@ -66,8 +66,6 @@
         </button>
     </div>
 
-
-   
     <div class="container mt-5">
         <h1 class="mb-4">Nos Biens Immobiliers</h1>
         <div class="row">
@@ -78,11 +76,11 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{$bien->nom}}</h5>
                         <p class="card-text flex-grow-1">
-                            <strong>Catégorie :</strong> {{$bien->categorie}}<br>
-                            <strong>Description :</strong> {{$bien->description}}<br>
+                            {{-- <strong>Catégorie :</strong> {{$bien->categorie}}<br> --}}
+                            <strong>Description :</strong> {{ Str::limit($bien->description , 100);}}<br>
                             <strong>Adresse :</strong> {{$bien->adresse}}<br>
-                            <strong>Statut :</strong> {{$bien->statut}}<br>
-                            <strong>Date :</strong> {{$bien->created_at}}
+                            {{-- <strong>Statut :</strong> {{$bien->statut}}<br>
+                            <strong>Date :</strong> {{$bien->created_at}} --}}
                         </p>
                         <div class="d-flex justify-content-between">
                             <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">En savoir +</a>
