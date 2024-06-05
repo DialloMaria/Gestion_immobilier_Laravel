@@ -13,7 +13,7 @@
         <div class="container">
 
             <a class="navbar-brand" href="#">
-                <img src="logo.png" alt="Logo" style="height: 40px;">
+                <img src="logo.png" alt="Damask Immobilier" style="height: 40px;">
             </a>
             
  
@@ -26,7 +26,7 @@
                         <a class="nav-link" href="#"><strong>A Propos</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>Conatct</strong></a>
+                        <a class="nav-link" href="#"><strong>Contact</strong></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true"></a>
@@ -65,20 +65,6 @@
             <span class="visually-hidden">Next</span>
         </button>
     </div>
-        <br>
-        <br>
-    <div class="container"  >
-        <h1>A propos de nous</h1>
-        <div class="d-flex"></div>
-        <div><img src="" alt=""></div>
-        <div>
-            <p>
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
-                Lorem ipsum dolor sit amet consectetur adipisicing elit. Est inventore aliquid commodi, animi magni necessitatibus delectus fugit. Facere alias minus vel, natus numquam perspiciatis velit animi ducimus, quia, ipsam laborum.
-            </p>
-        </div>
-    </div>
 
     <div class="container mt-5">
         <h1 class="mb-4">Nos Biens Immobiliers</h1>
@@ -90,11 +76,11 @@
                     <div class="card-body d-flex flex-column">
                         <h5 class="card-title">{{$bien->nom}}</h5>
                         <p class="card-text flex-grow-1">
-                            {{-- <strong>Catégorie :</strong> {{$bien->categorie}}<br> --}}
+                            <strong>Catégorie :</strong> {{$bien->categorie}}<br>
                             <strong>Description :</strong> {{ Str::limit($bien->description , 100);}}<br>
                             <strong>Adresse :</strong> {{$bien->adresse}}<br>
-                            {{-- <strong>Statut :</strong> {{$bien->statut}}<br>
-                            <strong>Date :</strong> {{$bien->created_at}} --}}
+                            <strong>Statut :</strong> {{$bien->statut}}<br>
+                            <strong>Date :</strong> {{$bien->created_at}}
                         </p>
                         <div class="d-flex justify-content-between">
                             <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">En savoir +</a>

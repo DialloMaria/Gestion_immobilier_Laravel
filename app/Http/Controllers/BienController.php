@@ -11,6 +11,7 @@ class BienController extends Controller
 {
     public function Affichage_des_biens(){
 
+     //Cette ligne de code nous a permis de créer un utilisateur
         // User::create([
         //     'name' => 'Mariam',
         //     'email' => 'mariam@boda.com',
@@ -28,11 +29,7 @@ class BienController extends Controller
         return view('/biens/index', compact('biens'));
     }
    
-    // public function DetailAdmin(){
-    //     $biens = Bien::findOrFail($id);
-    //     return view('biens.detailAdmin', compact('biens'));
-    // }
-
+    
     public function Ajouter_des_biens(){
         return view('/biens/ajoutBien');
     }
@@ -62,6 +59,12 @@ class BienController extends Controller
     {
         $biens = Bien::findOrFail($id);
         return view('biens.detailAdmin', compact('biens'));
+    }
+
+    public function detailsbien($id)
+    {
+        $biens = Bien::findOrFail($id);
+        return view('biens.details', compact('biens'));
     }
 
 

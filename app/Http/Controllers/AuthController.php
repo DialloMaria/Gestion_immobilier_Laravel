@@ -25,4 +25,13 @@ class AuthController extends Controller
            ])->onlyInput('email');
    
        }
+
+       public function logout(Request $request)
+       {
+           Auth::logout(); // Déconnexion de l'utilisateur
+           $request->session()->invalidate(); // Invalides la session de l'utilisateur
+           $request->session()->regenerateToken(); // Régénère le token CSRF
+           
+           return redirect('/'); // Redirection vers la page d'accueil ou une autre page après la déconnexion
+       }
 }

@@ -78,17 +78,23 @@
                     <div class="text-danger mt-1">{{ $message }}</div>
                 @enderror
             </div>
+            <br>
             <div class="form-group mb-3">
-                <label for="password">M.D.P</label>
+                <label for="password">Mot de passe</label>
                 <input type="password" class="form-control" id="password" name="password" value="{{ old('password') }}">
                 @error('password')
                     <div class="text-danger mt-1">{{ $message }}</div>
                 @enderror
             </div>
+            <hr>
             <button class="btn btn-primary">Se connecter</button>
         </form>
+         <br>
+        <!-- Bouton de retour -->
+        <a href="/" class="btn btn-link mt-3">Retour</a>
     </div>
 
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
+
 </html>

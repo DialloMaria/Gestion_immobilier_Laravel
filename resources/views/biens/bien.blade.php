@@ -111,19 +111,37 @@
         background-color: #0056b3;
         border-color: #0056b3;
     }
+
+    /* Style pour le bouton de déconnexion */
+    .btn-outline-white:hover {
+        background-color: #dc3545; /* Couleur de fond lorsque survolé (blanc) */
+        border-color: #dc3545; /* Couleur du contour lorsque survolé (blanc) */
+        color: #dc3545; /* Couleur du texte lorsque survolé (rouge) */
+    }
 </style>
 
 </head>
 <body>
   <div class="sidebar">
     <a class="nav-link active" aria-current="page" href="{{ route('Accueil') }}"><strong>Accueil</strong></a>
-
-
         <a href="#"><strong>Maisons</strong></a>
         <a href="#"><strong>Appartements</strong></a>
         <a href="Accueil/ajout"><button class="btn btn-primary w-100 mt-4">Publier un nouveau bien</button></a>
-      </div>
-    
+        
+      <!-- Bouton de déconnexion -->
+     <form action="{{ route('logout') }}" method="POST" class="text-center mt-4">
+        @csrf
+       <button type="submit" class="btn btn-outline-white text-white">Déconnexion</button>
+     </form>
+     
+  </div>
+    <!-- Affichage du nom de l'utilisateur -->
+        <div class="text-center mt-4">
+           @auth
+               <p class="text-dark">Bienvenue, <strong>{{ auth()->user()->name }}</strong></p>
+           @endauth
+        </div>
+
       <div class="content">
         {{-- section barre de navigation --}}
         <nav class="navbar navbar-expand-lg navbar-light">
@@ -174,7 +192,7 @@
                     <strong>Date :</strong> {{$bien->created_at}}
                   </p>
                   <div class="d-flex justify-content-between">
-                    <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">Voir plus</a>
+                    <a href="{{ route('biens.detailAdmin', ['id' => $bien->id]) }}" class="btn btn-primary">Voir plus</a>
                     <a href="/update/{{$bien->id}}" class="btn btn-secondary">Modifier</a>
                   </div>
                   <form action="{{ route('biens.supprimer', $bien->id) }}" method="POST" class="mt-2">

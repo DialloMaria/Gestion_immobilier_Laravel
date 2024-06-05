@@ -1,7 +1,3 @@
-
-
-
-
 <!doctype html>
 <html lang="en">
 
@@ -26,7 +22,7 @@
     <div class="container">
 
         <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo" style="height: 40px;">
+            <img src="" alt="Damask Immobilier" style="height: 40px;">
         </a>
         
 
@@ -36,24 +32,19 @@
                     <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>Bien</strong></a>
+                    <a class="nav-link" href="#"><strong>A Propos</strong></a>
                 </li>
                 <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>Blog</strong></a>
+                    <a class="nav-link" href="#"><strong>Contact</strong></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link disabled" aria-disabled="true"></a>
                 </li>
             </ul>
         </div>
-        
 
-        <div class="navbar-nav ml-auto">
-           <a href="login"><button class="btn btn-primary" type="button">se connecter</button></a> 
-        </div>
     </div>
 </nav>
-
 
 <body>
     <div class="container">
@@ -78,95 +69,77 @@
                 <span class="visually-hidden">Next</span>
             </button>
         </div>
-    <br><br>
-    <main role="main" class="container">
-        <div class="row">
-            <div class="col-md-8 blog-main">
-                <h3 class="pb-3 mb-4 font-italic border-bottom">
-                    {{ $biens->nom }} <br>
-                   <h5> {{ $biens->categorie }}</h5>
-                </h3>
+        <br><br>
+        <main role="main" class="container">
+            <div class="row">
+                <div class="col-md-8">
+                    <h3 class="pb-3 mb-4 font-italic border-bottom">
+                        {{ $biens->nom }} <br>
+                        <h5> {{ $biens->categorie }}</h5>
+                    </h3>
 
-                <div class="blog-post">
-                    <p class="blog-post-meta">Publié <a href="#"> {{ $biens->created_at }}</a></p>
+                    <div class="blog-post">
+                        <p class="blog-post-meta">Publié <a href="#"> {{ $biens->created_at }}</a></p>
 
-                    <p> {{ $biens->description }} </p>
-                    <div class="container">
-                        <div class="biens-header">
-                        
-                        
-                        </div>
+                        <p> {{ $biens->description }} </p>
+                        <div class="container">
+                            <div class="biens-header">
+                            </div>
 
-                        <div class="biens-details">
-                            <h5>Adresse</h5>
-                            <p>{{ $biens->adresse }}</p>
-                            <h5>Statut</h5>
-                            <p>{{ $biens->statut }}</p>
+                            <div class="biens-details">
+                                <h5>Adresse</h5>
+                                <p>{{ $biens->adresse }}</p>
+                                <h5>Statut</h5>
+                                <p>{{ $biens->statut }}</p>
+                            </div>
                         </div>
                     </div>
-                    
-                    {{-- <hr> --}}
-                </div><!-- /.blog-post -->
-            </div><!-- /.blog-main -->
 
-            <aside class="col-md-4 blog-sidebar">
-                <div class="p-3 mb-3 bg-light rounded">
-                    <h4 class="font-italic">Commentaire</h4>
-                    <br>
-                    @foreach ($biens->commentaires as $commentaire)
-                    <p class="mb-0"> <strong>{{$commentaire->auteur}}</strong> <br>
-                        {{$commentaire->contenu}}
+                    <div class="p-3 mb-3 bg-light rounded">
+                        <h4 class="font-italic">Commentaire</h4>
+                        <br>
+                        @foreach ($biens->commentaires as $commentaire)
+                        <p class="mb-0"> <strong>{{$commentaire->auteur}}</strong> <br>
+                            {{$commentaire->contenu}}
+                        </p>  
+                        <div> <p> Posté le {{$commentaire->created_at}}</p></div>  
+                                      
+                        <div style="margin-left: 200px" >
+                        <div class="d-flex justify-content-between">
                         
-                    </p>  
-                                  
-                    <div style="margin-left: 200px" >
-                        {{-- <a href="/update{{$commentaire->id}}"><i class="fa-solid fa-pen-to-square" style="color:#63E6BE;"></i></a>
-                        <a href="/detele/{{$commentaire->id}}"><i class="fa-solid fa-trash" style="color:red ;"></i></a>
-                     --}}
-                     <div class="d-flex justify-content-between">
-                      
-                        <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
-                        <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
-                           @csrf
-                           @method('DELETE')
-                           <button type="submit" class="btn btn-danger">Supprimer</button>
-                       </form>
-                      </div>
-               
-                     
+                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
+                            <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
+                                @csrf
+                                @method('DELETE')
+                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                            </form>
+                        </div>
+                        </div>
+                        <hr>
+                        <br>
+                        @endforeach
                     </div>
-                     {{-- <div> <p>{{$commentaire->created_at}}</p></div>   --}}
-                    
-                    <hr>
-                    <br>
-                    @endforeach
                 </div>
 
-
-            </aside>
-
-        </div>
-
-    </main>
-<hr>
-<div class="container">
-    <form action="commentaires/store" method="POST">
-        @csrf
-        <input type="hidden" name="bien_id" value="{{ $biens->id }}">
-        <div class="form-group">
-            <label for="auteur">Nom</label>
-            <input type="text" class="form-control" id="auteur" name="auteur">
-        </div>
-        <div class="mb-3">
-            <label for="contenu" class="form-label">Contenu du commentaire</label>
-            <textarea class="form-control" id="contenu" name="contenu" required></textarea>
-        </div>
-        <button type="submit" class="btn btn-primary">Ajouter Commentaire</button>
-    </form>
-</div>
-
-
-
+                <div class="col-md-4">
+                    <div class="container">
+                        <form action="commentaires/store" method="POST">
+                            @csrf
+                            <input type="hidden" name="bien_id" value="{{ $biens->id }}">
+                            <div class="form-group">
+                                <label for="auteur">Nom</label>
+                                <input type="text" class="form-control" id="auteur" name="auteur">
+                            </div>
+                            <div class="mb-3">
+                                <label for="contenu" class="form-label">Contenu du commentaire</label>
+                                <textarea class="form-control" id="contenu" name="contenu" required></textarea>
+                            </div>
+                            <button type="submit" class="btn btn-primary">Ajouter Commentaire</button>
+                        </form>
+                    </div>
+                </div>
+            </div>
+        </main>
+    </div>
 </body>
-
 </html>

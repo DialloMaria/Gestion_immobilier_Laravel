@@ -20,33 +20,10 @@
 
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
-
-        <a class="navbar-brand" href="#">
-            <img src="logo.png" alt="Logo" style="height: 40px;">
-        </a>
-        
-
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><strong>Accueil</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>Bien</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>Blog</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true"></a>
-                </li>
-            </ul>
-        </div>
-        
-
         <div class="navbar-nav ml-auto">
-           <a href="login"><button class="btn btn-primary" type="button">se connecter</button></a> 
+            <a href="{{ route('Accueil') }}"><button class="btn btn-primary" type="button">Retour</button></a> 
         </div>
+        
     </div>
 </nav>
 
@@ -101,9 +78,9 @@
                         </div>
                     </div>
                     
-                    {{-- <hr> --}}
-                </div><!-- /.blog-post -->
-            </div><!-- /.blog-main -->
+                   
+                </div>
+            </div>
 
             <aside class="col-md-4 blog-sidebar">
                 <div class="p-3 mb-3 bg-light rounded">
@@ -114,44 +91,13 @@
                         {{$commentaire->contenu}}
                         
                     </p>  
-                                  
-                    <div style="margin-left: 200px" >
-                        {{-- <a href="/update{{$commentaire->id}}"><i class="fa-solid fa-pen-to-square" style="color:#63E6BE;"></i></a>
-                        <a href="/detele/{{$commentaire->id}}"><i class="fa-solid fa-trash" style="color:red ;"></i></a>
-                     --}}
-                     <div class="d-flex justify-content-between">
-                      
-                        <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
-                        <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
-                           @csrf
-                           @method('DELETE')
-                           <button type="submit" class="btn btn-danger">Supprimer</button>
-                       </form>
-                      </div>
-               
-                     
-                    </div>
-                     {{-- <div> <p>{{$commentaire->created_at}}</p></div>   --}}
-                    
+                    <div> <p>Posté le {{$commentaire->created_at}}</p></div>  
                     <hr>
                     <br>
                     @endforeach
                 </div>
-{{-- 
-                <footer class="blog-footer">
-                    <nav class="blog-pagination">
-                        <a class="btn btn-outline-primary" href="/articles">Accueil</a>
-                        <a class="btn btn-outline-secondary " href="/articles/partager">Partager</a>
-                    </nav>
-                </footer> --}}
-
-            </aside><!-- /.blog-sidebar -->
-
-        </div><!-- /.row -->
-
-    </main><!-- /.container -->
-
-
+            </aside>
+        </div>
+    </main>
 </body>
-
 </html>
