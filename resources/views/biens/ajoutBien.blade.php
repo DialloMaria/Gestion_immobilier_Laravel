@@ -103,8 +103,10 @@
             </div>
             <button type="submit" class="btn btn-primary">Ajouter</button>
         </form>
-    </div>
+        <a href="{{ route('Accueil') }}" class="btn btn-link mt-3">Retour</a>
 
+    </div>
+<!-- Bouton de retour -->
     <script src="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/js/bootstrap.bundle.min.js"></script>
 </body>
 </html>

@@ -4,28 +4,23 @@ use Illuminate\Support\Facades\Route;
 use App\Http\Controllers\BienController;
 use App\Http\Controllers\CommentaireController;
 use App\Http\Controllers\AuthController;
-
-
+use App\Http\Middleware\EnsureTokenIsValid;
 
 Route::get('/   ', [BienController::class ,'vue_utilisateurs']);
 
-Route::get('Accueil', [BienController::class ,'Affichage_des_biens'])->name('Accueil');
 
-Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
+ 
+Route::middleware([EnsureTokenIsValid::class])->group(function () {
+    Route::get('Accueil', [BienController::class ,'Affichage_des_biens'])->name('Accueil');
+    Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
+    Route::post('ajout/traitement',[BienController::class , 'Traitement_des_biens']);
+    Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->name('biens.supprimer');
+    Route::get('/update/{id}', [BienController::class, 'modification_des_biens']);
+    Route::post('/update/traitement', [BienController::class, 'Traitement_pour_modifier_des_biens']);
+    Route::get('/biens/detailAdmin/{id}', [BienController::class, 'details'])->name('biens.detailAdmin');
+        // ...
+    });
 
-Route::post('ajout/traitement',[BienController::class , 'Traitement_des_biens']);
-
-Route::delete('/biens/{id}', [BienController::class, 'supprimer_des_biens'])->name('biens.supprimer');
-
-
-Route::get('/update/{id}', [BienController::class, 'modification_des_biens']);
-
-Route::post('/update/traitement', [BienController::class, 'Traitement_pour_modifier_des_biens']);
-
-
-
-//C'est la route qui permet d'afficher les détails d'un bien
-Route::get('/biens/detailAdmin/{id}', [BienController::class, 'details'])->name('biens.detailAdmin');
 
 Route::get('/biens/details/{id}', [BienController::class, 'detailsbien'])->name('biens.details');
 
