@@ -12,7 +12,9 @@ use App\Http\Controllers\AuthController;
 
 Route::get('Accueil', [BienController::class ,'Affichage_des_biens'])->name('Accueil');
 
-Route::get('/   ', [BienController::class ,'vue_utilisateurs']);
+Route::get('/', [BienController::class ,'vue_utilisateurs']);
+
+// ROute::get('detailAdmin', [BienController::class, 'DetailAdmin']);
 
 Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
 
@@ -28,7 +30,7 @@ Route::post('/update/traitement', [BienController::class, 'Traitement_pour_modif
 
 
 //C'est la route qui permet d'afficher les commentaire d'un bien
-Route::get('/biens/details/{id}', [BienController::class, 'details'])->name('biens.details');
+Route::get('/biens/details/{id}', [BienController::class, 'details'])->name('biens.detailAdmin');
 
 //Cette route c'est pour l'ajout d'un commentaire pour un bien
 Route::post('biens/details/commentaires/store', [CommentaireController::class, 'store'])->name('biens.commentaires.store');
