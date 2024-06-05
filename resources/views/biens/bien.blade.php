@@ -116,11 +116,12 @@
 </head>
 <body>
   <div class="sidebar">
-    <a href="#"><strong>Accueil</strong></
+    <a class="nav-link active" aria-current="page" href="{{ route('Accueil') }}"><strong>Accueil</strong></a>
 
-        <a href="#"><strong>Bien</strong></a>
-        <a href="#"><strong>Blog</strong></a>
-        <a href="Accueil/ajout"><button class="btn btn-primary w-100 mt-4">Ajouter</button></a>
+
+        <a href="#"><strong>Maisons</strong></a>
+        <a href="#"><strong>Appartements</strong></a>
+        <a href="Accueil/ajout"><button class="btn btn-primary w-100 mt-4">Publier un nouveau bien</button></a>
       </div>
     
       <div class="content">

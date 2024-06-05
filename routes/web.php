@@ -12,7 +12,7 @@ use App\Http\Controllers\AuthController;
 
 Route::get('Accueil', [BienController::class ,'Affichage_des_biens'])->name('Accueil');
 
-Route::get('/   ', [BienController::class ,'vue_utilisateurs']);
+Route::get('/ ', [BienController::class ,'vue_utilisateurs']);
 
 Route::get('Accueil/ajout', [BienController::class , 'Ajouter_des_biens']);
 

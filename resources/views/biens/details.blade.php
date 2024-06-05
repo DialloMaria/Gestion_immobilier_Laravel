@@ -33,7 +33,7 @@
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">
                 <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="#"><strong>Accueil</strong></a>
+                    <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
                 </li>
                 <li class="nav-item">
                     <a class="nav-link" href="#"><strong>Bien</strong></a>

@@ -20,13 +20,13 @@
             <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
                 <ul class="navbar-nav">
                     <li class="nav-item">
-                        <a class="nav-link active" aria-current="page" href="#"><strong>Accueil</strong></a>
+                        <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>Bien</strong></a>
+                        <a class="nav-link" href="#"><strong>A Propos</strong></a>
                     </li>
                     <li class="nav-item">
-                        <a class="nav-link" href="#"><strong>Blog</strong></a>
+                        <a class="nav-link" href="#"><strong>Conatct</strong></a>
                     </li>
                     <li class="nav-item">
                         <a class="nav-link disabled" aria-disabled="true"></a>
@@ -36,7 +36,7 @@
             
     
             <div class="navbar-nav ml-auto">
-               <a href="login"><button class="btn btn-primary" type="button">se connecter</button></a> 
+               <a href="login"><button class="btn btn-primary" type="button">Se connecter</button></a> 
             </div>
         </div>
     </nav>
