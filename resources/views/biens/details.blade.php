@@ -141,19 +141,13 @@
                     <br>
                     @endforeach
                 </div>
-{{-- 
-                <footer class="blog-footer">
-                    <nav class="blog-pagination">
-                        <a class="btn btn-outline-primary" href="/articles">Accueil</a>
-                        <a class="btn btn-outline-secondary " href="/articles/partager">Partager</a>
-                    </nav>
-                </footer> --}}
 
-            </aside><!-- /.blog-sidebar -->
 
-        </div><!-- /.row -->
+            </aside>
 
-    </main><!-- /.container -->
+        </div>
+
+    </main>
 <hr>
 <div class="container">
     <form action="commentaires/store" method="POST">
