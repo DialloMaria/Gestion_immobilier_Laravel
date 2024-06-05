@@ -13,7 +13,7 @@
 
     .sidebar {
         height: 100vh;
-        background-color: #1a1a1a;
+        background-color: #f8f9fa;
         position: fixed;
         width: 250px;
         top: 0;
@@ -26,7 +26,7 @@
         padding: 15px;
         text-align: center;
         display: block;
-        color: #fff;
+        color: black;
         text-decoration: none;
         transition: background-color 0.3s;
     }
@@ -118,6 +118,23 @@
         border-color: #dc3545; /* Couleur du contour lorsque survolé (blanc) */
         color: #dc3545; /* Couleur du texte lorsque survolé (rouge) */
     }
+
+    .user-name {
+            color: white;
+            font-weight: bold;
+        }
+        .navbar-brand img {
+            height: 40px;
+        }
+        .btn-logout {
+            border: 1px solid transparent;
+            color: white;
+            transition: border-color 0.3s, color 0.3s;
+        }
+        .btn-logout:hover {
+            border-color: #dc3545;
+            color: #dc3545;
+        }
 </style>
 
 </head>
@@ -128,29 +145,42 @@
         <a href="#"><strong>Appartements</strong></a>
         <a href="Accueil/ajout"><button class="btn btn-primary w-100 mt-4">Publier un nouveau bien</button></a>
         
-      <!-- Bouton de déconnexion -->
-     <form action="{{ route('logout') }}" method="POST" class="text-center mt-4">
-        @csrf
-       <button type="submit" class="btn btn-outline-white text-white">Déconnexion</button>
-     </form>
+  
      
   </div>
-    <!-- Affichage du nom de l'utilisateur -->
-        <div class="text-center mt-4">
-           @auth
-               <p class="text-dark">Bienvenue, <strong>{{ auth()->user()->name }}</strong></p>
-           @endauth
-        </div>
+
+        
 
       <div class="content">
         {{-- section barre de navigation --}}
-        <nav class="navbar navbar-expand-lg navbar-light">
-          <div class="container">
-            <a class="navbar-brand" href="#">
-              <img src="logo.png" alt="Logo" style="height: 40px;">
-            </a>
+        <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
+          <div class="container-fluid">
+              <a class="navbar-brand" href="#">
+                  <img src="logo.png" alt="Logo">
+              </a>
+              <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
+                  <span class="navbar-toggler-icon"></span>
+              </button>
+              <div class="collapse navbar-collapse justify-content-end" id="navbarSupportedContent">
+                  @auth
+                      <div class="dropdown">
+                          <button class="btn btn dropdown-toggle user-name" type="button" id="dropdownMenuButton" data-bs-toggle="dropdown" aria-expanded="false">
+                              {{ auth()->user()->name }}
+                          </button>
+                          <ul class="dropdown-menu dropdown-menu-end" aria-labelledby="dropdownMenuButton">
+                              <li>
+                                  <form action="{{ route('logout') }}" method="POST" class="dropdown-item">
+                                      @csrf
+                                      <button type="submit" class="btn btn-link">Déconnexion</button>
+                                  </form>
+                              </li>
+                          </ul>
+                      </div>
+                  @endauth
+              </div>
           </div>
-        </nav>
+      </nav>
+
     
         {{-- section banniere --}}
         <div id="carouselExampleControls" class="carousel slide" data-bs-ride="carousel">
