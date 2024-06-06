@@ -9,15 +9,17 @@ use Illuminate\Support\Facades\Hash;
 
 class BienController extends Controller
 {
+
+    //Cette fonction affiche la vue qui permet aux utilisateurs de voir l'ensemble des biens
     public function Affichage_des_biens(){
 
     //  Cette ligne de code nous a permis de créer un utilisateur
+
         // User::create([
         //     'name' => 'sidi',
         //     'email' => 'sidi@gmail.com',
         //     'password' => Hash::make('222')
         // ]); 
-
 
 
         $biens= Bien::all();
@@ -92,6 +94,13 @@ class BienController extends Controller
 
         $bien->update();
         return redirect('/Accueil');
+    }
+
+    //Cette fonction c'est pour gerer l'affichage de notre page de contact
+
+    public function contact()
+    {
+        return view('Contact');
     }
 
 }
