@@ -13,7 +13,7 @@ return Application::configure(basePath: dirname(__DIR__))
     ->withMiddleware(function (Middleware $middleware) {
         //Là je crée le middleware
         $middleware->alias([
-            'midlleware' => EnsureTokenIsValid::class
+            'middleware' => EnsureTokenIsValid::class
         ]);
     })
     ->withExceptions(function (Exceptions $exceptions) {

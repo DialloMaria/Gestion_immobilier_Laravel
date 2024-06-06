@@ -74,7 +74,17 @@
                             <h5>Adresse</h5>
                             <p>{{ $biens->adresse }}</p>
                             <h5>Statut</h5>
-                            <p>{{ $biens->statut }}</p>
+                            <strong>@if ($biens->statut == 1)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $biens->id }}" id="disponible{{ $biens->id }}" value="1" checked>
+                                    <label class="form-check-label" for="disponible{{ $biens->id }}">Disponible</label>
+                                </div>
+                            @else
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $biens->id }}" id="indisponible{{ $biens->id }}" value="0" checked>
+                                    <label class="form-check-label" for="indisponible{{ $biens->id }}">Indisponible</label>
+                                </div>
+                            @endif</strong>
                         </div>
                     </div>
                     
