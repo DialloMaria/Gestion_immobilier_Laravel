@@ -90,13 +90,23 @@
                                 <h5>Adresse</h5>
                                 <p>{{ $biens->adresse }}</p>
                                 <h5>Statut</h5>
-                                <p>{{ $biens->statut }}</p>
+                                <strong>@if ($biens->statut == 1)
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="disponible{{ $biens->id }}" id="disponible{{ $biens->id }}" value="1" checked>
+                                        <label class="form-check-label" for="disponible{{ $biens->id }}">Disponible</label>
+                                    </div>
+                                @else
+                                    <div class="form-check form-check-inline">
+                                        <input class="form-check-input" type="radio" name="disponible{{ $biens->id }}" id="indisponible{{ $biens->id }}" value="0" checked>
+                                        <label class="form-check-label" for="indisponible{{ $biens->id }}">Indisponible</label>
+                                    </div>
+                                @endif</strong>
                             </div>
                         </div>
                     </div>
-
+<hr>
                     <div class="p-3 mb-3 bg-light rounded">
-                        <h4 class="font-italic">Commentaire</h4>
+                        <h4 class="font-italic">Commentaires</h4>
                         <br>
                         @foreach ($biens->commentaires as $commentaire)
                         <p class="mb-0"> <strong>{{$commentaire->auteur}}</strong> <br>
@@ -104,17 +114,21 @@
                         </p>  
                         <div> <p> Posté le {{$commentaire->created_at}}</p></div>  
                                       
-                        <div style="margin-left: 200px" >
-                        <div class="d-flex justify-content-between">
-                        
-                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
+                        <div class="d-flex gap-2 align-items-center">
+                            <!-- Bouton pour éditer -->
+                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-primary mr-2">
+                                <i class="fas fa-edit"></i> <!-- Icone de modification pour illustrer l'édition -->
+                            </a>
+                            <!-- Bouton pour supprimer -->
                             <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
                                 @csrf
                                 @method('DELETE')
-                                <button type="submit" class="btn btn-danger">Supprimer</button>
+                                <button type="submit" class="btn btn-danger">
+                                    <i class="fas fa-trash"></i> <!-- Icone de la corbeille pour la suppression -->
+                                </button>
                             </form>
                         </div>
-                        </div>
+                        
                         <hr>
                         <br>
                         @endforeach
