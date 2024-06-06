@@ -41,12 +41,11 @@
             <input type="text" class="form-control" id="nom" name="nom" value="{{$bien->nom}}" >
           </div>
           <div class="col-md-6">
-            <label for="categorie" class="form-label">Catégorie</label>
+            <label for="categorie" class="form-label  @error('categorie') is-invalid @enderror">Catégorie</label>
             <select class="form-control" id="categorie" name="categorie" value="{{$bien->categorie}}" >
-              <option value="">Sélectionner une catégorie</option>
-              <option value="duplex">Duplex</option>
-              <option value="appartement">Appartement</option>
-              <option value="champ">Chambre</option>
+              <option value="">Selectionner une categprie</option>
+              <option value="Luxe">Luxe</option>
+              <option value="Moyen">Moyen</option>
             </select>
           </div>
         </div>
@@ -62,12 +61,15 @@
         </div>
         <div class="row mb-3">
           <div class="col-md-6">
-            <label for="status" class="form-label">Statut</label>
-            <select class="form-control" id="status" name="statut" value="{{$bien->statut}}"  >
-              <option value="">Sélectionner un statut</option>
+            <label for="status" class="form-label  @error('statut') is-invalid @enderror">Statut</label>
+            <select class="form-control" id="status" name="statut"   value="{{$bien->sataut}}" >
+              <option value="">Selectionner un statut</option>
               <option value="1">Disponible</option>
               <option value="0">Indisponible</option>
             </select>
+            @error('statut')
+            <div class="text-danger">choisisser une categorie</div>
+            @enderror
           </div>
           <div class="col-md-6">
             <label for="description" class="form-label">Description</label>

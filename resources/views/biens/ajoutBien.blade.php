@@ -84,9 +84,8 @@
                     <label for="categorie" class="form-label">Catégorie</label>
                     <select class="form-control @error('categorie') is-invalid @enderror" id="categorie" name="categorie">
                         <option value="">Sélectionner une catégorie</option>
-                        <option value="duplex">Duplex</option>
-                        <option value="appartement">Appartement</option>
-                        <option value="chambre">Chambre</option>
+                        <option value="Luxe">Luxe</option>
+                        <option value="Moyen">Moyen</option>
                     </select>
                     @error('categorie')
                     <div class="text-danger">Choisir une catégorie</div>

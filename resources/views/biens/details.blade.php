@@ -16,34 +16,66 @@
     <link href="https://fonts.googleapis.com/css?family=Playfair+Display:700,900" rel="stylesheet">
     <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
 
+    <style>
+
+.navbar-custom {
+      height: 90px; /* Hauteur normale pour la barre de navigation */
+    }
+    .navbar-custom .nav-link {
+      font-size: 1.25rem; /* Taille moyenne pour les écritures */
+    }
+    .navbar-custom .navbar-brand {
+      font-size: 1.6rem; /* Taille un peu plus grande pour le logo/marque */
+    }
+    .btn-primary {
+      font-size: 1rem; /* Taille moyenne pour le bouton */
+    }
+         footer {
+      background-color: #343a40;
+      color: #ffffff;
+      padding: 40px 0;
+    }
+    footer .footer-link {
+      color: #ffffff;
+      text-decoration: none;
+      transition: color 0.3s;
+    }
+    footer .footer-link:hover {
+      color: #ff6137;
+    }
+    footer .social-icons a {
+      color: #ffffff;
+      font-size: 1.5rem;
+      margin: 0 10px;
+      transition: color 0.3s;
+    }
+    footer .social-icons a:hover {
+      color: #ff6137;
+    }   
+    </style>
 </head>
 
-<nav class="navbar navbar-expand-lg navbar-light bg-light">
+<nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
     <div class="container">
-
-        <a class="navbar-brand" href="#">Damask Immobilier
-            {{-- <img src="logo.png" alt="Damask Immobilier" style="height: 40px;"> --}}
-        </a>
-
-        <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
-            <ul class="navbar-nav">
-                <li class="nav-item">
-                    <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>A Propos</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link" href="#"><strong>Contact</strong></a>
-                </li>
-                <li class="nav-item">
-                    <a class="nav-link disabled" aria-disabled="true"></a>
-                </li>
-            </ul>
-        </div>
-
+      <a class="navbar-brand" href="#">Damask Immobilier</a>
+      <div class="collapse navbar-collapse justify-content-center CENTRE" id="navbarNav">
+        <ul class="navbar-nav">
+          <li class="nav-item">
+            <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><strong>A Propos</strong></a>
+          </li>
+          <li class="nav-item">
+            <a class="nav-link" href="#"><strong>Contact</strong></a>
+          </li>
+        </ul>
+      </div>
+      {{-- <div class="navbar-nav ml-auto">
+        <a href="login"><button class="btn btn-primary" type="button">Se connecter</button></a> 
+      </div> --}}
     </div>
-</nav>
+  </nav>
 
 <body>
     <div class="container">
@@ -159,6 +191,42 @@
                 </div>
             </div>
         </main>
+
+
     </div>
+        <footer class="mt-5">
+            <div class="container">
+              <div class="row">
+                <div class="col-md-4">
+                  <h5>Damask Immobilier</h5>
+                  <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Integer nec odio. Praesent libero. Sed cursus ante dapibus diam.</p>
+                </div>
+                <div class="col-md-4">
+                  <h5>Liens rapides</h5>
+                  <ul class="list-unstyled">
+                    <li><a href="#" class="footer-link">Accueil</a></li>
+                    <li><a href="#" class="footer-link">A Propos</a></li>
+                    <li><a href="#" class="footer-link">Contact</a></li>
+                    <li><a href="#" class="footer-link">Services</a></li>
+                  </ul>
+                </div>
+                <div class="col-md-4">
+                  <h5>Suivez-nous</h5>
+                  <div class="social-icons">
+                    <a href="#" class="footer-link"><i class="fab fa-facebook-f"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-twitter"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-instagram"></i></a>
+                    <a href="#" class="footer-link"><i class="fab fa-linkedin-in"></i></a>
+                  </div>
+                </div>
+              </div>
+              <div class="row mt-4">
+                <div class="col text-center">
+                  <p>&copy; 2024 Damask Immobilier. Tous droits réservés.</p>
+                </div>
+              </div>
+            </div>
+          </footer>
+   
 </body>
 </html>
