@@ -22,6 +22,44 @@
     .btn-primary {
       font-size: 1rem; /* Taille moyenne pour le bouton */
     }
+
+    .about-section {
+      padding: 60px 0;
+      background-color: #f8f9fa;
+      text-align: center;
+    }
+    .about-section h2 {
+      font-size: 2.5rem;
+      margin-bottom: 30px;
+      color: #343a40;
+      position: relative;
+    }
+    .about-section h2::after {
+      content: '';
+      display: block;
+      width: 60px;
+      height: 4px;
+      background-color:#0056b3 ;
+      margin: 20px auto;
+      border-radius: 2px;
+    }
+    .about-section p {
+      font-size: 1.125rem;
+      color: #6c757d;
+    }
+    .about-image {
+      max-width: 100%;
+      height: auto;
+      border-radius: 10px;
+      box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    }
+    /* Animations */
+    .fade-in {
+      animation: fadeIn 2s ease-in-out;
+    }
+    .slide-in {
+      animation: slideIn 2s ease-in-out;
+    }
     footer {
       background-color: #343a40;
       color: #ffffff;
@@ -113,8 +151,37 @@
         </button>
     </div>
 
+
+  <!-- Section "À propos" -->
+  <section class="about-section">
+    <div class="container">
+      <h2>À propos de nous</h2>
+      <div class="row align-items-center">
+        <div class="col-md-6 fade-in">
+          <p>
+            Damask Immobilier est une entreprise leader dans le secteur de l'immobilier. 
+            Nous nous engageons à offrir à nos clients un service de qualité supérieure, 
+            des conseils d'experts et des solutions innovantes pour toutes leurs 
+            transactions immobilières. Que vous cherchiez à acheter, vendre ou louer 
+            une propriété, notre équipe dédiée est là pour vous accompagner à chaque étape.
+          </p>
+          <p>
+            Nous croyons en la transparence, l'intégrité et la satisfaction de nos clients. 
+            Notre mission est de rendre le processus immobilier aussi simple et agréable que 
+            possible pour vous. Avec des années d'expérience et une connaissance approfondie 
+            du marché, Damask Immobilier est votre partenaire de confiance pour toutes vos 
+            transactions immobilières.
+          </p>
+        </div>
+        <div class="col-md-6 text-center slide-in">
+          <img src="https://images.pexels.com/photos/259098/pexels-photo-259098.jpeg?auto=compress&cs=tinysrgb&w=600" class="about-image" alt="Image à propos de nous">
+        </div>
+      </div>
+    </div>
+  </section>
+
     <div class="container mt-5">
-        <h1 class="mb-4">Nos Biens Immobiliers</h1>
+        <h2 style="text-align: center; font-size: 2.5rem; color: #343a40;">Nos Biens Immobiliers</h2>
         <div class="row">
             @foreach ($biens as $bien)
             <div class="col-md-4 mb-4">
@@ -139,6 +206,7 @@
         </div>
     </div>
 
+    <!-- Section "Footer" -->
     <footer class="mt-5">
         <div class="container">
           <div class="row">
