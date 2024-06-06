@@ -107,7 +107,7 @@
                         <div style="margin-left: 200px" >
                         <div class="d-flex justify-content-between">
                         
-                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning">Modifier</a>
+                            <a href="{{ route('commentaires.edit', $commentaire->id) }}" class="btn btn-warning"><i class="fa fa-trash-o" aria-hidden="true"></i></a>
                             <form method="POST" action="{{ route('commentaires.destroy', $commentaire->id) }}">
                                 @csrf
                                 @method('DELETE')

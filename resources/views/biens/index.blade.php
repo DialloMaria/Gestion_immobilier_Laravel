@@ -79,7 +79,19 @@
                             <strong>Catégorie :</strong> {{$bien->categorie}}<br>
                             <strong>Description :</strong> {{ Str::limit($bien->description , 100);}}<br>
                             <strong>Adresse :</strong> {{$bien->adresse}}<br>
-                            <strong>Statut :</strong> {{$bien->statut}}<br>
+                        
+                            <strong>@if ($bien->statut == 1)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $bien->id }}" id="disponible{{ $bien->id }}" value="1" checked>
+                                    <label class="form-check-label" for="disponible{{ $bien->id }}">Disponible</label>
+                                </div>
+                            @else
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $bien->id }}" id="indisponible{{ $bien->id }}" value="0" checked>
+                                    <label class="form-check-label" for="indisponible{{ $bien->id }}">Indisponible</label>
+                                </div>
+                            @endif</strong>
+
                             <strong>Date :</strong> {{$bien->created_at}}
                         </p>
                         <div class="d-flex justify-content-between">
