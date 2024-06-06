@@ -21,10 +21,9 @@
 <nav class="navbar navbar-expand-lg navbar-light bg-light">
     <div class="container">
 
-        <a class="navbar-brand" href="#">
-            <img src="" alt="Damask Immobilier" style="height: 40px;">
+        <a class="navbar-brand" href="#">Damask Immobilier
+            {{-- <img src="logo.png" alt="Damask Immobilier" style="height: 40px;"> --}}
         </a>
-        
 
         <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
             <ul class="navbar-nav">

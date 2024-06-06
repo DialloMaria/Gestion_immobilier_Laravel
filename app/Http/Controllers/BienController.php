@@ -11,11 +11,11 @@ class BienController extends Controller
 {
     public function Affichage_des_biens(){
 
-     //Cette ligne de code nous a permis de créer un utilisateur
+    //  Cette ligne de code nous a permis de créer un utilisateur
         // User::create([
-        //     'name' => 'Mariam',
-        //     'email' => 'mariam@boda.com',
-        //     'password' => Hash::make('0000')
+        //     'name' => 'sidi',
+        //     'email' => 'sidi@gmail.com',
+        //     'password' => Hash::make('222')
         // ]); 
 
 

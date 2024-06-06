@@ -59,7 +59,7 @@
             transition: background 0.3s;
         }
         .btn-primary:hover {
-            background: linear-gradient(135deg, #71b7e6, #9b59b6);
+            background: linear-gradient(135deg, #71b7e6, #ff6137);
         }
         .text-danger {
             font-size: 0.875rem;

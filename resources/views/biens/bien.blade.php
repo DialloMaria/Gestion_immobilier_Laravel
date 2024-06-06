@@ -4,7 +4,11 @@
   <meta charset="utf-8">
   <meta name="viewport" content="width=device-width, initial-scale=1">
   <title>Accueil - Gestion Immobilière</title>
-  <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+  <link rel="shortcut icon" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" type="image/x-icon">
+  <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet">
+  {{-- <link href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.2/css/all.min.css" rel="stylesheet"> --}}
+ <link href="https://cdn.jsdelivr.net/npm/bootstrap@5.3.3/dist/css/bootstrap.min.css" rel="stylesheet" integrity="sha384-QWTKZyjpPEjISv5WaRU9OFeRpok6YctnYmDr5pNlyT2bRjXh0JMhjY6hW+ALEwIH" crossorigin="anonymous">
+ <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.0.0-beta3/css/all.min.css" integrity="sha384-k6RqeWeci5ZR/Lv4MR0sA0FfDOMpTuH4MGN7mtKZ6pZEE48Na/wP19bI1ap6FoH/" crossorigin="anonymous">
   <style>
     body {
         background: #f8f9fa;
@@ -49,7 +53,10 @@
     }
 
     .navbar-nav .nav-link {
-        color: #fff !important;
+        color: #fff ;
+    }
+    .navbar-brand{
+      color: #ffffff
     }
 
     .carousel-inner img {
@@ -120,9 +127,27 @@
     } */
 
     .user-name {
-            color: white;
-            font-weight: bold;
-        }
+      color:#ffffff;
+      background-color: transparent;
+      border: none;
+    }
+    .user-name:hover,
+    .user-name:focus {
+      color: #ffffff;
+      background-color: transparent;
+      border: none;
+    }
+    /* .dropdown-menu {
+      background-color: #343a40; /* couleur de fond du menu déroulant */
+    } */
+    .dropdown-item {
+      color: #ffffff;
+    }
+    .dropdown-item:hover,
+    .dropdown-item:focus {
+      /* background-color: #0056b3; */
+      color: #ffffff;
+    }
         .navbar-brand img {
             height: 40px;
         }
@@ -155,9 +180,9 @@
         {{-- section barre de navigation --}}
         <nav class="navbar fixed-top navbar-expand-lg navbar-light bg-dark">
           <div class="container-fluid">
-              <a class="navbar-brand" href="#">
-                  <img src="logo.png" alt="Logo">
-              </a>
+            <a class="navbar-brand" href="#">Damask Immobilier
+              {{-- <img src="logo.png" alt="Damask Immobilier" style="height: 40px;"> --}}
+          </a>
               <button class="navbar-toggler" type="button" data-bs-toggle="collapse" data-bs-target="#navbarSupportedContent" aria-controls="navbarSupportedContent" aria-expanded="false" aria-label="Toggle navigation">
                   <span class="navbar-toggler-icon"></span>
               </button>
@@ -222,14 +247,15 @@
                     <strong>Date :</strong> {{$bien->created_at}} --}}
                   </p>
                   <div class="d-flex justify-content-between">
-                    <a href="{{ route('biens.detailAdmin', ['id' => $bien->id]) }}" class="btn btn-primary">Voir plus</a>
-                    <a href="/update/{{$bien->id}}" class="btn btn-secondary">Modifier</a>
-                  </div>
-                  <form action="{{ route('biens.supprimer', $bien->id) }}" method="POST" class="mt-2">
+                    <a href="{{ route('biens.detailAdmin', ['id' => $bien->id]) }}" class="btn btn-primary">  <i class="fas fa-eye"></i></a>
+                    <a href="/update/{{$bien->id}}" class="btn btn-secondary"><i class="fas fa-edit"></i></a>
+                    <form action="{{ route('biens.supprimer', $bien->id) }}" method="POST" class="mt-2">
                     @csrf
                     @method('DELETE')
-                    <button type="submit" class="btn btn-danger w-100">Supprimer</button>
+                    <button type="submit" class="btn btn-danger w-100">  <i class="fas fa-trash-alt"></i> </button>
                   </form>
+                  </div>
+           
                 </div>
               </div>
             </div>
