@@ -81,7 +81,8 @@
             <br>
             <div class="form-group mb-3">
                 <label for="password">Mot de passe</label>
-                <input type="password" class="form-control @error('password') is-invalid @enderror" id="password" name="password" value="{{ old('password') }}">
+                <input type="password" class="form-control @error('password') is-invalid @enderror" 
+                id="password" name="password" value="{{ old('password') }}">
                 @error('password')
                     <div class="text-danger">Donner votre mot de passe</div>
                 @enderror
@@ -93,7 +94,6 @@
         <!-- Bouton de retour -->
         <a href="/" class="btn btn-link mt-3">Retour</a>
     </div>
-
     <script src="https://cdnjs.cloudflare.com/ajax/libs/bootstrap/5.1.3/js/bootstrap.bundle.min.js"></script>
 </body>
 

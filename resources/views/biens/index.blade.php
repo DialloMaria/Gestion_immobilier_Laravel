@@ -89,6 +89,7 @@
     {{-- section barre de navigation --}}
     <nav class="navbar navbar-expand-lg navbar-light bg-light navbar-custom">
         <div class="container">
+
           <a class="navbar-brand" href="#">Damask Immobilier</a>
           <div class="collapse navbar-collapse justify-content-center CENTRE" id="navbarNav">
             <ul class="navbar-nav">
@@ -106,6 +107,35 @@
           <div class="navbar-nav ml-auto">
             <a href="login"><button class="btn btn-primary" type="button">Se connecter</button></a> 
           </div>
+
+
+            <a class="navbar-brand" href="#">Damask Immobilier
+                {{-- <img src="logo.png" alt="Damask Immobilier" style="height: 40px;"> --}}
+            </a>
+            
+ 
+            <div class="collapse navbar-collapse justify-content-center" id="navbarNav">
+                <ul class="navbar-nav">
+                    <li class="nav-item">
+                        <a class="nav-link active" aria-current="page" href="/"><strong>Accueil</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="#"><strong>A Propos</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link" href="contact"><strong>Contact</strong></a>
+                    </li>
+                    <li class="nav-item">
+                        <a class="nav-link disabled" aria-disabled="true"></a>
+                    </li>
+                </ul>
+            </div>
+            
+    
+            <div class="navbar-nav ml-auto">
+               <a href="login"><button class="btn btn-primary" type="button">Se connecter</button></a> 
+            </div>
+
         </div>
       </nav>
 
@@ -195,6 +225,17 @@
                             {{-- <strong>Adresse :</strong> {{$bien->adresse}}<br>
                             <strong>Statut :</strong> {{$bien->statut}}<br>
                             <strong>Date :</strong> {{$bien->created_at}} --}}
+                            <strong>@if ($bien->statut == 1)
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $bien->id }}" id="disponible{{ $bien->id }}" value="1" checked>
+                                    <label class="form-check-label" for="disponible{{ $bien->id }}">Disponible</label>
+                                </div>
+                            @else
+                                <div class="form-check form-check-inline">
+                                    <input class="form-check-input" type="radio" name="disponible{{ $bien->id }}" id="indisponible{{ $bien->id }}" value="0" checked>
+                                    <label class="form-check-label" for="indisponible{{ $bien->id }}">Indisponible</label>
+                                </div>
+                            @endif</strong>
                         </p>
                         <div class="d-flex justify-content-between">
                             <a href="/biens/details/{{$bien->id}}" class="btn btn-primary">En savoir +</a>
