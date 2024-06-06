@@ -12,7 +12,7 @@
             display: flex;
             justify-content: center;
             align-items: center;
-             background: linear-gradient( #71b7e6, #ff6137); */
+             background: linear-gradient( #71b7e6, #ff6137); 
             font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
         }
         .card {

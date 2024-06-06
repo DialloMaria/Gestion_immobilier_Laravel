@@ -31,9 +31,9 @@
         transition: background-color 0.3s;
     }
 
-    .sidebar a:hover {
+    /* .sidebar a:hover {
         background-color: #0056b3;
-    }
+    } */
 
     .content {
         margin-left: 250px;
@@ -99,9 +99,9 @@
     .btn-primary,
     .btn-secondary,
     .btn-danger {
-        background-color: #ff6137;
+        /* background-color: #ff6137;
         border-color: #ff6137;
-        border-radius: 50px;
+        border-radius: 50px; */
         transition: background-color 0.3s, border-color 0.3s;
     }
 
@@ -113,11 +113,11 @@
     }
 
     /* Style pour le bouton de déconnexion */
-    .btn-outline-white:hover {
+    /* .btn-outline-white:hover {
         background-color: #dc3545; /* Couleur de fond lorsque survolé (blanc) */
         border-color: #dc3545; /* Couleur du contour lorsque survolé (blanc) */
         color: #dc3545; /* Couleur du texte lorsque survolé (rouge) */
-    }
+    } */
 
     .user-name {
             color: white;
@@ -131,10 +131,10 @@
             color: white;
             transition: border-color 0.3s, color 0.3s;
         }
-        .btn-logout:hover {
+        /* .btn-logout:hover {
             border-color: #dc3545;
             color: #dc3545;
-        }
+        } */
 </style>
 
 </head>
@@ -217,9 +217,9 @@
                   <p class="card-text flex-grow-1">
                     <strong>Catégorie :</strong> {{$bien->categorie}}<br>
                     <strong>Description :</strong> {{ Str::limit($bien->description , 100);}}<br>
-                    <strong>Adresse :</strong> {{$bien->adresse}}<br>
+                    {{-- <strong>Adresse :</strong> {{$bien->adresse}}<br>
                     <strong>Statut :</strong> {{$bien->statut}}<br>
-                    <strong>Date :</strong> {{$bien->created_at}}
+                    <strong>Date :</strong> {{$bien->created_at}} --}}
                   </p>
                   <div class="d-flex justify-content-between">
                     <a href="{{ route('biens.detailAdmin', ['id' => $bien->id]) }}" class="btn btn-primary">Voir plus</a>

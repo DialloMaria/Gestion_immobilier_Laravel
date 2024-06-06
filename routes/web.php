@@ -39,3 +39,4 @@ Route::get('/login', [AuthController::class, 'login'])->name('auth.login');
 Route::post('/login', [AuthController::class, 'dologin']); 
 
 Route::post('/logout', [AuthController::class, 'logout'])->name('logout');
+    
